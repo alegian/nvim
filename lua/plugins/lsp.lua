@@ -8,8 +8,27 @@ return {
   },
   {
     "mason-org/mason-lspconfig.nvim",
+    opts = {},
+  },
+  {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
     opts = {
-      ensure_installed = { "lua_ls", "ts_ls", "kotlin_lsp", "tailwindcss", "java_language_server", "gradle_ls", "jsonls", "html" },
+      auto_update = true,
+      run_on_start = true,
+      ensure_installed = {
+        -- LSPs
+        "lua-language-server",
+        "typescript-language-server",
+        "kotlin-lsp",
+        "tailwindcss-language-server",
+        "java-language-server",
+        "gradle-language-server",
+        "json-lsp",
+        "html-lsp",
+        -- Formatters
+        "stylua",
+        "prettierd",
+      },
     },
-  }
+  },
 }

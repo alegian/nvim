@@ -1,33 +1,33 @@
 return {
-  'nvim-lualine/lualine.nvim',
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
+  "nvim-lualine/lualine.nvim",
+  dependencies = { "nvim-tree/nvim-web-devicons" },
   opts = {
     sections = {
-      lualine_a = { 'mode' },
-      lualine_b = { 'location' },
-      lualine_c = { 'filename' },
+      lualine_a = { "mode" },
+      lualine_b = { "location" },
+      lualine_c = { "filename" },
       lualine_x = {
-        'encoding',
+        "encoding",
         {
-          'fileformat',
+          "fileformat",
           symbols = {
-            unix = 'LF',
-            dos = 'CRLF',
-            mac = 'CR',
-          }
+            unix = "LF",
+            dos = "CRLF",
+            mac = "CR",
+          },
         },
-        'filetype'
+        "filetype",
       },
-      lualine_y = { 'searchcount' },
-      lualine_z = { 'lsp_status' }
+      lualine_y = { "searchcount" },
+      lualine_z = { "lsp_status" },
     },
     inactive_sections = {
       lualine_a = {},
       lualine_b = {},
-      lualine_c = { 'filename' },
+      lualine_c = { "filename" },
       lualine_x = {},
       lualine_y = {},
-      lualine_z = {}
+      lualine_z = {},
     },
-  }
+  },
 }

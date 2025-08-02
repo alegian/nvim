@@ -10,13 +10,10 @@ vim.opt.smartindent = true
 vim.opt.wrap = false
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { noremap = true, silent = true })
-vim.keymap.set('n', 'gr', vim.lsp.buf.references, { noremap = true, silent = true })
-vim.keymap.set('n', 'rn', vim.lsp.buf.rename, { noremap = true })
-vim.keymap.set('n', 'H', vim.lsp.buf.hover, { noremap = true, silent = true })
-vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, { noremap = true, silent = true })
-vim.keymap.set('n', '<localleader>f', function()
-  vim.lsp.buf.format { async = true }
-end, { noremap = true })
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { noremap = true, silent = true })
+vim.keymap.set("n", "gr", vim.lsp.buf.references, { noremap = true, silent = true })
+vim.keymap.set("n", "rn", vim.lsp.buf.rename, { noremap = true })
+vim.keymap.set("n", "H", vim.lsp.buf.hover, { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { noremap = true, silent = true })
 
 require("config.lazy")
