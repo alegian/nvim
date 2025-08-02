@@ -7,6 +7,16 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   lazy = false,
+  opts = {
+    filesystem = {
+      filtered_items = {
+        visible = true,
+        hide_dotfiles = false,
+        hide_gitignored = true,
+        hide_hidden = false
+      },
+    },
+  },
   keys = {
     {
       "<leader>e",
