@@ -16,6 +16,7 @@ vim.opt.scrolloff = 8
 vim.opt.colorcolumn = "80"
 vim.opt.updatetime = 50
 vim.opt.signcolumn = "yes"
+vim.opt.winborder = "rounded"
 
 vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { silent = true })
 vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { silent = true })

@@ -4,9 +4,11 @@ return {
     opts = {},
   },
   {
+    -- default LSP configurations
     "neovim/nvim-lspconfig",
   },
   {
+    -- automatically enable mason LSPs
     "mason-org/mason-lspconfig.nvim",
     opts = {},
   },
