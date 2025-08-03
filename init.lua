@@ -13,11 +13,16 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
 vim.opt.colorcolumn = "80"
 vim.opt.updatetime = 50
 vim.opt.signcolumn = "yes"
 vim.opt.winborder = "rounded"
 vim.opt.completeopt = { "menu", "menuone", "noinsert", "fuzzy", "popup" }
+vim.opt.cursorline = true
+vim.opt.undofile = true
+vim.opt.undodir = vim.fn.expand("~/.vim/undodir")
+
 
 vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { silent = true })
 vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { silent = true })
@@ -29,6 +34,8 @@ vim.keymap.set("n", "<leader>d", '"_d', { silent = true })
 vim.keymap.set("x", "<leader>d", '"_d', { silent = true })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { silent = true })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { silent = true })
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("i", "<Tab>", "<C-y>")
 vim.keymap.set("n", "g]", vim.diagnostic.goto_next)
 vim.keymap.set("n", "g[", vim.diagnostic.goto_prev)
