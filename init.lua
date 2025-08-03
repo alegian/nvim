@@ -17,6 +17,7 @@ vim.opt.colorcolumn = "80"
 vim.opt.updatetime = 50
 vim.opt.signcolumn = "yes"
 vim.opt.winborder = "rounded"
+vim.opt.completeopt = { "menu", "menuone", "noinsert", "fuzzy", "popup" }
 
 vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { silent = true })
 vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { silent = true })
@@ -28,5 +29,26 @@ vim.keymap.set("n", "<leader>d", '"_d', { silent = true })
 vim.keymap.set("x", "<leader>d", '"_d', { silent = true })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { silent = true })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { silent = true })
+vim.keymap.set("i", "<Tab>", "<C-y>")
+vim.keymap.set("n", "g]", vim.diagnostic.goto_next)
+vim.keymap.set("n", "g[", vim.diagnostic.goto_prev)
+vim.keymap.set("i", "<C-Space>", function()
+  vim.lsp.completion.get()
+end)
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(ev)
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_completion) then
+      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+    end
+  end,
+})
+
+vim.diagnostic.config({
+  virtual_lines = {
+    current_line = true,
+  },
+})
 
 require("config.lazy")
