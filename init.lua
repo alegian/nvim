@@ -23,7 +23,6 @@ vim.opt.cursorline = true
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.expand("~/.vim/undodir")
 
-
 vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { silent = true })
 vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { silent = true })
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { silent = true })
@@ -61,3 +60,13 @@ vim.diagnostic.config({
 })
 
 require("config.lazy")
+
+vim.lsp.config("tailwindcss", {
+  settings = {
+    tailwindCSS = {
+      experimental = {
+        configFile = "../../packages/reactlib/global.css",
+      },
+    },
+  },
+})
