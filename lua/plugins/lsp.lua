@@ -40,10 +40,18 @@ return {
       {
         "<localleader>l",
         function()
+          vim.cmd("w")
           local eslint = require("lint").linters.eslint_d.args
-          table.insert(eslint, "--fix-dry-run")
+          table.remove(eslint, #eslint - 1)
+          table.remove(eslint, #eslint - 1)
+          table.insert(eslint, "--fix")
           require("lint").try_lint()
           table.remove(eslint)
+          table.insert(eslint, #eslint - 1, "--stdin")
+          table.insert(eslint, #eslint - 1, "--stdin-filename")
+          vim.defer_fn(function()
+            vim.cmd("checktime")
+          end, 300)
         end,
         mode = "n",
       },
