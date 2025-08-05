@@ -36,6 +36,18 @@ return {
   },
   {
     "mfussenegger/nvim-lint",
+    keys = {
+      {
+        "<localleader>l",
+        function()
+          local eslint = require("lint").linters.eslint_d.args
+          table.insert(eslint, "--fix-dry-run")
+          require("lint").try_lint()
+          table.remove(eslint)
+        end,
+        mode = "n",
+      },
+    },
     config = function()
       local lint = require("lint")
       lint.linters_by_ft = {
