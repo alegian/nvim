@@ -15,6 +15,7 @@ return {
   opts = {
     formatters_by_ft = {
       lua = { "stylua" },
+      kotlin = { "ktfmt" },
       json = { "prettierd" },
       typescript = { "prettierd" },
       javascript = { "prettierd" },

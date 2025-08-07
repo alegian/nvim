@@ -27,10 +27,14 @@ return {
         "gradle-language-server",
         "json-lsp",
         "html-lsp",
+        "prisma-language-server",
         -- Formatters
         "stylua",
         "prettierd",
+        "ktfmt",
+        -- Linters
         "eslint_d",
+        "ktlint",
       },
     },
   },
@@ -64,6 +68,7 @@ return {
         typescript = { "eslint_d" },
         javascriptreact = { "eslint_d" },
         typescriptreact = { "eslint_d" },
+        kotlin = { "ktlint" },
       }
 
       local eslint = lint.linters.eslint_d.args
