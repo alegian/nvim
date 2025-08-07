@@ -26,7 +26,6 @@ vim.opt.undodir = vim.fn.expand("~/.vim/undodir")
 vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { silent = true })
 vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { silent = true })
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { silent = true })
-vim.keymap.set("n", "H", vim.lsp.buf.hover, { silent = true })
 vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { silent = true })
 vim.keymap.set("x", "<leader>p", '"_dP', { silent = true })
 vim.keymap.set("n", "<leader>d", '"_d', { silent = true })
@@ -42,6 +41,12 @@ vim.keymap.set("n", "g]", vim.diagnostic.goto_next, { silent = true })
 vim.keymap.set("n", "g[", vim.diagnostic.goto_prev, { silent = true })
 vim.keymap.set("i", "<C-Space>", function()
   vim.lsp.completion.get()
+end, { silent = true })
+vim.keymap.set("n", "H", function()
+  local _, winid = vim.diagnostic.open_float()
+  if winid == nil then
+    vim.lsp.buf.hover()
+  end
 end, { silent = true })
 
 vim.api.nvim_create_autocmd("LspAttach", {
