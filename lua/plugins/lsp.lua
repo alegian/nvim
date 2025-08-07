@@ -56,6 +56,7 @@ return {
         mode = "n",
       },
     },
+    event = "VimEnter",
     config = function()
       local lint = require("lint")
       lint.linters_by_ft = {
@@ -64,6 +65,10 @@ return {
         javascriptreact = { "eslint_d" },
         typescriptreact = { "eslint_d" },
       }
+
+      local eslint = lint.linters.eslint_d.args
+      table.insert(eslint, 1, "--flag")
+      table.insert(eslint, 2, "unstable_config_lookup_from_file")
 
       vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
         callback = function()

@@ -66,6 +66,3 @@ vim.diagnostic.config({
 })
 
 require("config.lazy")
-local eslint = require("lint").linters.eslint_d.args
-table.insert(eslint, 1, "--flag")
-table.insert(eslint, 2, "unstable_config_lookup_from_file")
