@@ -6,7 +6,8 @@ return {
     {
       "<localleader>f",
       function()
-        require("conform").format({ async = true })
+        require("conform").format()
+        vim.cmd("w")
       end,
       mode = "n",
     },

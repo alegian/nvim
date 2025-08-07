@@ -51,7 +51,7 @@ return {
           table.insert(eslint, #eslint, "--stdin-filename")
           vim.defer_fn(function()
             vim.cmd("checktime")
-          end, 300)
+          end, 1000)
         end,
         mode = "n",
       },
