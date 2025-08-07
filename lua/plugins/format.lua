@@ -17,6 +17,8 @@ return {
       json = { "prettierd" },
       typescript = { "prettierd" },
       javascript = { "prettierd" },
+      typescriptreact = { "prettierd" },
+      javascriptreact = { "prettierd" },
       html = { "prettierd" },
       markdown = { "prettierd" },
     },
