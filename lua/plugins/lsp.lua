@@ -11,9 +11,16 @@ return {
     -- automatically enable mason LSPs
     "mason-org/mason-lspconfig.nvim",
     opts = {},
+    dependencies = {
+      "mason-org/mason.nvim",
+      "neovim/nvim-lspconfig",
+    },
   },
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
+    dependencies = {
+      "mason-org/mason.nvim",
+    },
     opts = {
       auto_update = true,
       run_on_start = true,
@@ -40,6 +47,9 @@ return {
   },
   {
     "mfussenegger/nvim-lint",
+    dependencies = {
+      "WhoIsSethDaniel/mason-tool-installer.nvim",
+    },
     keys = {
       {
         "<localleader>l",
