@@ -36,7 +36,7 @@ return {
 
     local eslint = lint.linters.eslint_d.args
     table.insert(eslint, 1, "--flag")
-    table.insert(eslint, 2, "unstable_config_lookup_from_file")
+    table.insert(eslint, 2, "v10_config_lookup_from_file")
 
     vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave", "TextChanged" }, {
       callback = function()
