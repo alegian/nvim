@@ -49,6 +49,11 @@ vim.keymap.set("n", "H", function()
     vim.lsp.buf.hover()
   end
 end, { silent = true })
+for i = 1, 4 do
+  local lhs = "<leader>" .. i
+  local rhs = i .. "<c-w>w"
+  vim.keymap.set("n", lhs, rhs)
+end
 
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(ev)
