@@ -9,5 +9,6 @@ return {
     vim.keymap.set("n", "<leader>fb", builtin.buffers)
     vim.keymap.set("n", "<leader>fh", builtin.help_tags)
     vim.keymap.set("n", "<leader>fr", builtin.resume)
+    vim.keymap.set("v", "<leader>fg", "\"zy<cmd>exec 'Telescope live_grep default_text=' . escape(@z, ' ')<cr>")
   end,
 }
