@@ -22,6 +22,7 @@ return {
         "json-lsp",
         "html-lsp",
         "prisma-language-server",
+        "haskell-language-server",
         -- Formatters
         "stylua",
         "prettierd",
