@@ -36,7 +36,10 @@ return {
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
     },
-    opts = {},
+    opts = {
+      multiline_threshold = 10,
+      trim_scope = "inner",
+    },
     event = "VimEnter",
     keys = {
       {
