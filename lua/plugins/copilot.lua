@@ -6,6 +6,7 @@ return {
     suggestion = {
       keymap = {
         accept = "<Insert>",
+        accept_word = "<C-Right>",
         dismiss = "<Esc>",
       },
     },
