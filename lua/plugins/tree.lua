@@ -46,10 +46,6 @@ return {
   },
   keys = {
     {
-      "<leader>e",
-      "<cmd>Neotree toggle current reveal_force_cwd<CR>",
-    },
-    {
       "|",
       "<cmd>Neotree toggle left reveal_force_cwd<CR>",
     },
