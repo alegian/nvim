@@ -1,3 +1,9 @@
+vim.keymap.set('n', '<Insert>', '<Nop>', { silent = true })
+vim.keymap.set('i', '<Insert>', '<Nop>', { silent = true })
+vim.keymap.set('v', '<Insert>', '<Nop>', { silent = true })
+vim.keymap.set('x', '<Insert>', '<Nop>', { silent = true })
+vim.keymap.set('s', '<Insert>', '<Nop>', { silent = true })
+
 vim.opt.clipboard:append("unnamedplus")
 vim.opt.incsearch = true
 vim.opt.hlsearch = false
