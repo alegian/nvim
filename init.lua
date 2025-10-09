@@ -94,4 +94,13 @@ vim.diagnostic.config({
   },
 })
 
+-- hack to make ts_ls not cry
+local old_notify = vim.notify
+vim.notify = function(msg, level, opts)
+  if type(msg) == "string" and msg:match("_typescript.applyCodeActionCommand") then
+    return
+  end
+  old_notify(msg, level, opts)
+end
+
 require("config.lazy")
