@@ -55,6 +55,19 @@ for i = 1, 4 do
   vim.keymap.set("n", lhs, rhs)
 end
 
+-- Close pane 3, then go to the last used pane
+vim.keymap.set("n", "<leader>x", function()
+  local win3 = vim.fn.win_gotoid(vim.fn.win_getid(3))
+  if win3 ~= 0 then
+    vim.cmd("3wincmd q")
+  else
+    vim.notify("Window 3 does not exist", vim.log.levels.WARN)
+    return
+  end
+
+  vim.cmd("wincmd p")
+end, { silent = true })
+
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(ev)
     local client = vim.lsp.get_client_by_id(ev.data.client_id)
