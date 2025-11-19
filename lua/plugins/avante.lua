@@ -1,5 +1,8 @@
 return {
   "yetone/avante.nvim",
+  cond = function()
+    return not vim.g.vscode
+  end,
   build = "make",
   event = "VeryLazy",
   version = false, -- Never set this value to "*"! Never!
