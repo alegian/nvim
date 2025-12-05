@@ -49,6 +49,11 @@ return {
         end,
         mode = "n",
       },
+      {
+        "<leader>cc",
+        "<cmd>TSContext toggle<CR>",
+        mode = "n",
+      },
     },
   },
 }
