@@ -1,5 +1,8 @@
 return {
   "nvim-telescope/telescope.nvim",
+  cond = function()
+    return not vim.g.vscode
+  end,
   tag = "0.1.8",
   dependencies = { "nvim-lua/plenary.nvim" },
   keys = function()

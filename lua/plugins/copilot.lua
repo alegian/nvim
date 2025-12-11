@@ -1,5 +1,8 @@
 return {
   "zbirenbaum/copilot.lua",
+  cond = function()
+    return not vim.g.vscode
+  end,
   cmd = "Copilot",
   event = "InsertEnter",
   opts = {
