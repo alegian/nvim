@@ -1,8 +1,8 @@
-vim.keymap.set('n', '<Insert>', '<Nop>', { silent = true })
-vim.keymap.set('i', '<Insert>', '<Nop>', { silent = true })
-vim.keymap.set('v', '<Insert>', '<Nop>', { silent = true })
-vim.keymap.set('x', '<Insert>', '<Nop>', { silent = true })
-vim.keymap.set('s', '<Insert>', '<Nop>', { silent = true })
+vim.keymap.set("n", "<Insert>", "<Nop>", { silent = true })
+vim.keymap.set("i", "<Insert>", "<Nop>", { silent = true })
+vim.keymap.set("v", "<Insert>", "<Nop>", { silent = true })
+vim.keymap.set("x", "<Insert>", "<Nop>", { silent = true })
+vim.keymap.set("s", "<Insert>", "<Nop>", { silent = true })
 
 vim.opt.clipboard:append("unnamedplus")
 vim.opt.incsearch = true
@@ -24,7 +24,7 @@ vim.opt.colorcolumn = "80"
 vim.opt.updatetime = 50
 vim.opt.signcolumn = "yes"
 vim.opt.winborder = "rounded"
-vim.opt.completeopt = { "menu", "menuone", "noinsert", "fuzzy", "popup" }
+vim.opt.completeopt = { "menu", "menuone", "noinsert", "popup" }
 vim.opt.cursorline = true
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.expand("~/.vim/undodir")
